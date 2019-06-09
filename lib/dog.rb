@@ -38,12 +38,12 @@ class Dog
     dog
   end
   
-  def self.find_by_id(num)
+  def self.find_by_id(id)
     sql= <<-SQL
       SELECT * FROM dogs 
-      WHERE num = ?
+      WHERE id = ?
     SQL
-    DB[:conn].execute(sql, num).map do |row|
+    DB[:conn].execute(sql, id).map do |row|
       self.new_from_db(row)
     end.first
   end
