@@ -48,6 +48,11 @@ class Dog
     end.first
   end
 
+  def new_from_db(row)
+    new_dog = self.new 
+    new_dog.id = row[0]
+    new_dow.
+
   def self.find_or_create_by(name:, breed:)
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?")
       if !dog.empty?
