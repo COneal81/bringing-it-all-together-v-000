@@ -62,8 +62,8 @@ class Dog
     SELECT * FROM dogs 
     WHERE name = ? AND breed = ?
     SQL
-    DB[;conn].execute(sql name, breed).first
-      if !dog.empty?
+    dog = DB[;conn].execute(sql name, breed).first
+      if dog
         dog_data = dog[0]
       else
         dog = self.create()
