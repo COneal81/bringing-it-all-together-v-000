@@ -68,6 +68,7 @@ class Dog
       else
         new_dog = self.create({:name => name, :breed => breed})
       end
+      new_dog
   end
   
   def self.find_by_name(name)
