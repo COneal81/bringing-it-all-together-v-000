@@ -32,7 +32,8 @@ class Dog
     self
   end
   
-  def self.create()
+  def self.create(hash_of_attributes)
+    dog = Dog.new(?,?)
   
   end
 end 
