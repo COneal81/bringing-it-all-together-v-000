@@ -54,5 +54,6 @@ class Dog
         dog_data = dog[0]
       else
         dog = self.create()
+      end
   end
 end 
