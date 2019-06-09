@@ -54,7 +54,7 @@ class Dog
       :name => row[1],
       :breed => row[2]
     } 
-    attribute_hash
+    self.new(attribute_hash)
    end
    
   def self.find_or_create_by(name:, breed:)
