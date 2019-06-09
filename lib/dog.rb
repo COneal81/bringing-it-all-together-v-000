@@ -8,25 +8,25 @@ class Dog
     
   def self.create_table
     sql=<<-SQL
-    CREATE TABLE IF NOT EXISTS dogs(
-    id INTEGER PRIMARY KEY,
-    name TEXT,
-    breed TEXT)
+      CREATE TABLE IF NOT EXISTS dogs(
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      breed TEXT)
     SQL
     DB[:conn].execute(sql)
   end
   
   def self.drop_table
     sql = <<-SQL 
-    DROP TABLE dogs
+      DROP TABLE dogs
     SQL
     DB[:conn].execute(sql)
   end
   
   def save
     sql= <<-SQL 
-    INSERT INTO dogs(name,breed)
-    VALUES(?,?)
+      INSERT INTO dogs(name,breed)
+      VALUES(?,?)
     SQL
     DB[:conn].execute(sql, self.name, self.breed)
     self
@@ -38,12 +38,13 @@ class Dog
     dog
   end
   
-  def self.find_by_id(id)
+  def self.find_by_id(num)
     sql= <<-SQL
-    SELECT * FROM dogs WHERE id = ?
+      SELECT * FROM dogs 
+      WHERE num = ?
     SQL
-    # DB[:conn].execute(sql, id).map do |row|
-    #   self.new_from_db(row)
-    # end
+    DB[:conn].execute(sql, id).map do |row|
+      self.new_from_db(row)
+    end
   end
 end 
