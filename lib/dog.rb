@@ -49,6 +49,6 @@ class Dog
   end
 
   def self.find_or_create_by(name)
-    dog = DB[:conn].execute("SELECT *FROM dogs WHERE name = ?")
+    
   end
 end 
