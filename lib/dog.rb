@@ -51,9 +51,10 @@ class Dog
   def new_from_db(row)
     attribute_hash = {
       :id = row[0],
-      :name = [1],
-      :breed = [2]
+      :name = row[1],
+      :breed = row[2]
     } 
+    
    end
    
   def self.find_or_create_by(name:, breed:)
