@@ -64,7 +64,7 @@ class Dog
     SQL
     dog = DB[;conn].execute(sql name, breed).first
       if dog
-        dog.new
+        new_dog = 
       else
         dog = self.create()
       end
